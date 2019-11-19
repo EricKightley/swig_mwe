@@ -8,7 +8,7 @@ from setuptools import setup, Extension
 
 
 example_module = Extension('_example',
-                           sources=['example_wrap.c', 'example.c'],
+                           sources=['src/example_wrap.c', 'src/example.c'],
                            )
 
 setup (name = 'example',
