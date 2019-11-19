@@ -11,7 +11,7 @@ fastLA_module = Extension('_fastLA',
                            sources=['fastLA_wrap.c', 'fastLA.c'],
                            )
 
-setup (name = 'fastLA',
+setup (name = 'sparseklearn',
        version = '0.1',
        author      = "SWIG Docs",
        description = """Simple swig example from docs""",
