@@ -1,5 +1,5 @@
 build/
 *.so
 __pycache__/
-*fastLA.py
+fastLA/fastLA.py
 *wrap.c
