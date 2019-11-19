@@ -7,8 +7,8 @@ setup.py file for SWIG example
 from setuptools import setup, Extension
 
 
-fastLA_module = Extension('_fastLA',
-                           sources=['fastLA_wrap.c', 'fastLA.c'],
+fastLA_module = Extension('fastLA._fastLA',
+                           sources=['fastLA/fastLA_wrap.c', 'fastLA/fastLA.c'],
                            )
 
 setup (name = 'sparseklearn',

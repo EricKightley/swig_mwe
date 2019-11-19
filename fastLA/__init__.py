@@ -1,0 +1,1 @@
+from .fastLA import fact
