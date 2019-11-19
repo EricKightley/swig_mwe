@@ -5,5 +5,5 @@
 #define SWIG_FILE_WITH_INIT
 #include "fastLA.h"
 %}
-
-int fact(int n);
+%include "fastLA.h"
+/*int fact(int n);*/
