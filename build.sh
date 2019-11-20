@@ -1,5 +1,5 @@
 #!/bin/sh
 
-swig -python fastLA/fastLA.i
+swig -python swig_mwe/fastLA/fastLA.i
 python setup.py build_ext --inplace
 pytest

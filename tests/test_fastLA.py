@@ -1,4 +1,4 @@
-import fastLA
+from swig_mwe import fastLA
 
 def test_fact():
     result = fastLA.fact(3)

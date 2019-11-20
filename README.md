@@ -14,14 +14,8 @@ cd swig_mwe
 pip install .
 ```
 
-Desired behavior:
+Usage:
 ```
-from mymoduleEPK.fastLA import fact
+from swig_mwe.fastLA import fact
+fact(4)
 ```
-
-Current behavior:
-```
-from fastLA import fact
-```
-
-`cleanup.sh` removes all the build files to help with testing the build
