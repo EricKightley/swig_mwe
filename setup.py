@@ -7,14 +7,14 @@ setup.py file for SWIG example
 from setuptools import setup, Extension
 
 
-example_module = Extension('_example',
-                           sources=['src/example_wrap.c', 'src/example.c'],
+fastLA_module = Extension('fastLA._fastLA',
+                           sources=['fastLA/fastLA_wrap.c', 'fastLA/fastLA.c'],
                            )
 
-setup (name = 'example',
+setup (name = 'mymoduleEPK',
        version = '0.1',
        author      = "SWIG Docs",
        description = """Simple swig example from docs""",
-       ext_modules = [example_module],
-       py_modules = ["example"],
+       ext_modules = [fastLA_module],
+       py_modules = ["fastLA"],
        )
