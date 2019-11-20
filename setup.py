@@ -20,4 +20,8 @@ setup(
     ext_modules = [fastLA_module],
     py_modules = ["fastLA"],
     packages = find_packages(),
+    install_requires = [
+        'pytest',
+    ],
+    zip_safe = False
 )
