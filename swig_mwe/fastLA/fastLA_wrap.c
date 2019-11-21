@@ -3316,6 +3316,17 @@ SWIGINTERNINLINE PyObject*
 
   #define SWIG_From_double   PyFloat_FromDouble 
 
+
+double my_dot(int len1, double* vec1, int len2, double* vec2) {
+    if (len1 != len2) {
+        PyErr_Format(PyExc_ValueError,
+                     "Arrays of lengths (%d,%d) given",
+                     len1, len2);
+        return 0.0;
+    }
+    return dot(len1, vec1, vec2);
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -3385,10 +3396,84 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_dot(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  int arg1 ;
+  double *arg2 = (double *) 0 ;
+  int arg3 ;
+  double *arg4 = (double *) 0 ;
+  PyArrayObject *array1 = NULL ;
+  int is_new_object1 = 0 ;
+  PyArrayObject *array3 = NULL ;
+  int is_new_object3 = 0 ;
+  PyObject *swig_obj[2] ;
+  double result;
+  
+  if (!SWIG_Python_UnpackTuple(args, "dot", 2, 2, swig_obj)) SWIG_fail;
+  {
+    npy_intp size[1] = {
+      -1
+    };
+    array1 = obj_to_array_contiguous_allow_conversion(swig_obj[0],
+      NPY_DOUBLE,
+      &is_new_object1);
+    if (!array1 || !require_dimensions(array1, 1) ||
+      !require_size(array1, size, 1)) SWIG_fail;
+    arg1 = (int) array_size(array1,0);
+    arg2 = (double*) array_data(array1);
+  }
+  {
+    npy_intp size[1] = {
+      -1
+    };
+    array3 = obj_to_array_contiguous_allow_conversion(swig_obj[1],
+      NPY_DOUBLE,
+      &is_new_object3);
+    if (!array3 || !require_dimensions(array3, 1) ||
+      !require_size(array3, size, 1)) SWIG_fail;
+    arg3 = (int) array_size(array3,0);
+    arg4 = (double*) array_data(array3);
+  }
+  {
+    result = (double)my_dot(arg1,arg2,arg3,arg4);
+    if (PyErr_Occurred()) SWIG_fail;
+  }
+  resultobj = SWIG_From_double((double)(result));
+  {
+    if (is_new_object1 && array1)
+    {
+      Py_DECREF(array1); 
+    }
+  }
+  {
+    if (is_new_object3 && array3)
+    {
+      Py_DECREF(array3); 
+    }
+  }
+  return resultobj;
+fail:
+  {
+    if (is_new_object1 && array1)
+    {
+      Py_DECREF(array1); 
+    }
+  }
+  {
+    if (is_new_object3 && array3)
+    {
+      Py_DECREF(array3); 
+    }
+  }
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { "SWIG_PyInstanceMethod_New", SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { "fact", _wrap_fact, METH_O, NULL},
 	 { "rms", _wrap_rms, METH_O, NULL},
+	 { "dot", _wrap_dot, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

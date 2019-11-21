@@ -16,6 +16,7 @@ int fact(int n) {
     }
 }
 
+
 double rms(double* seq, int n) {
     if (n == 0) {
         return 0;
@@ -28,4 +29,13 @@ double rms(double* seq, int n) {
         res = res / (float)n;
         return sqrt(res);
     }
+}
+
+
+double dot(int len, double* vec1, double* vec2) {
+    double result = 0;
+    for (int i = 0 ; i < len ; i++ ) {
+        result = result += vec1[i] * vec2[i];
+    }
+    return result;
 }

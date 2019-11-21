@@ -68,4 +68,7 @@ def fact(n):
 def rms(seq):
     return _fastLA.rms(seq)
 
+def dot(len1, len2):
+    return _fastLA.dot(len1, len2)
+
 
