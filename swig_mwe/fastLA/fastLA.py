@@ -65,4 +65,7 @@ class _SwigNonDynamicMeta(type):
 def fact(n):
     return _fastLA.fact(n)
 
+def rms(seq):
+    return _fastLA.rms(seq)
+
 
