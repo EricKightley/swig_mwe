@@ -38,3 +38,4 @@ double my_dot(int len1, double* vec1, int len2, double* vec2) {
     return dot(len1, vec1, vec2);
 }
 %}
+clear ((int len1, double* vec1), (int len2, double* vec2));

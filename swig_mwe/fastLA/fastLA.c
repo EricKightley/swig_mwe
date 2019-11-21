@@ -35,7 +35,7 @@ double rms(double* seq, int n) {
 double dot(int len, double* vec1, double* vec2) {
     double result = 0;
     for (int i = 0 ; i < len ; i++ ) {
-        result = result += vec1[i] * vec2[i];
+        result = result + vec1[i] * vec2[i];
     }
     return result;
 }
