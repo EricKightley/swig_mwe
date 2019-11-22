@@ -15,7 +15,6 @@ import_array();
 %}
 
 int fact(int n);
-
 %apply (double* IN_ARRAY1, int DIM1) {(double* seq, int n)};
 double rms(double* seq, int n);
 clear (double* seq, int n);
@@ -38,4 +37,4 @@ double my_dot(int len1, double* vec1, int len2, double* vec2) {
     return dot(len1, vec1, vec2);
 }
 %}
-clear ((int len1, double* vec1), (int len2, double* vec2));
+%clear (int len1, double* vec1, int len2, double* vec2);
